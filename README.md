@@ -1,7 +1,22 @@
 # html-es-component-pattern
 Patterns to use native ECMAScript modules for WebComponents. including SSR Support
 
+## Conventions Rules.
+```js
+export const render = function(data) {} //=> returns string
+export const html = render();
+export const customElement = customElementDefinition
+export const connectedCallback = function(el) {}
+/* sideEffect global only once per import url can be instanciated via ?hash applyed to import url */
+```
 
+connectedCallback includes all functionality like bindings that you want to apply to the el when it got rendered
+can be used if you do not use customElementDefinition. can also be used for polyfill usecases if customElements is not possible
+
+render
+```js
+// reference outer model and merge it with data to supply defaults
+```
 
 ## Most Basic Pattern Small Component
 ```js
