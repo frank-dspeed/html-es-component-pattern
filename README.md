@@ -55,6 +55,16 @@ get elements by document.querySelectorAll()
 const elementsArray = document.querySelectorAll('module-tag')
 //elementsArray
 ```
+self referencing script include render
+```html
+<script type="module">
+//This Template References the module that generate the template dynamic
+//It uses {'/script'} hack to convinence html parsers when used inside a single page html app
+let html = `<script>${import.meta.url}<${'/script'}>`
+console.log(html)
+</script>
+```
+
 
 ### Big example
 used with node index.mjs > index.html
