@@ -28,8 +28,8 @@ you need to implament not all Conventions you can also choose to go in any combi
 ```js
 import uuid from 'uuid'
 export const model = { id: `el-${uuid.v4()}`, color: 'blue'}
-export const render = function() { 
-  return `<${this.id} style="color: ${this.color}">I am ${this.color}</${this.id}>`
+export const render = function() {
+  return `<${this.id} style="color: ${this.color}">I am ${this.color}</${this.id}>`;
 }
 export const html = render.apply(model)
 ```
@@ -49,10 +49,23 @@ export const html = render();
 ```
 
 Generate a index.html via ssr
-```
+```js
 import {render} from './simple-module.mjs'
 console.log(render())
 ``` 
+
+A Flexible render function most time you will never need this api but it shows what is possible
+```js
+import uuid from 'uuid'
+export const model = { id: `el-${uuid.v4()}`, color: 'blue'}
+export const render = function(data) {
+  const current = this;
+  Object.assign(this,model,current,data);
+  return `<${this.id} style="color: ${this.color}">I am ${this.color}</${this.id}>`
+}
+export const html = render.apply(model,model) //or render(model)
+```
+
 
 ## Most Basic Pattern Small Component with a static export
 
