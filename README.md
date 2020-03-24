@@ -33,6 +33,7 @@ export const render = function() {
 }
 export const html = render.apply(model)
 ```
+jo
 
 ```js
 import uuid from 'uuid'
