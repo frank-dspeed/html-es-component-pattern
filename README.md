@@ -65,6 +65,29 @@ console.log(html)
 </script>
 ```
 
+use dynamic import inside a cjs script
+```html
+<p>My <span>component</span></p>
+<script defer>{
+    const customElement = document.currentScript.previousElementSibling;
+    document.addEventListener('DOMContentLoaded', () => {
+      customElement.querySelector('span').innerText = 'Component'
+      customElement.innerHTML += ' Works after DOMContentLoaded!';
+    });  
+}</script>
+```
+
+use dynamic import for esm use with document.currentScript
+
+```js
+<el-3123421-214213-21413213>My <span>component</span></el-3123421-214213-21413213>
+<script defer>{
+    const customElement = document.currentScript.previousElementSibling;
+    // As we remember we would apply bindings also to our render()
+    import('./simple-module.mjs').then(({render})=>render({ id: customElement.tagName }));
+    // we can use the existing node via customElement or its tagName to apply custom logic,
+}</script>
+``` 
 
 ### Big example
 used with node index.mjs > index.html
