@@ -1,12 +1,15 @@
 # html-es-component-pattern
 Patterns to use native ECMAScript modules for WebComponents. including SSR Support
+https://dev.to/frankdspeed/the-html-component-pattern-hcp-3pkp
 
 ## Conventions Rules.
 ```js
 export const render = function(data) {} //=> returns string
 export const html = render();
 export const customElement = customElementDefinition
-export const connectedCallback = function(el) {}
+// A function that takes a el as argument for manual element or component upgrades.
+export const connectedCallback = connectedCallbackFrom = el =>customelement.prototype,connectedCallback.apply(el)
+
 /* sideEffect global only once per import url can be instanciated via ?hash applyed to import url */
 ```
 
