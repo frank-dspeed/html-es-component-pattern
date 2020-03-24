@@ -53,7 +53,8 @@ If you use this you can append also Logic to the new inserted element or compone
 get elements by document.querySelectorAll()
 ```js
 const elementsArray = document.querySelectorAll('module-tag')
-
+//elementsArray
+```
 
 ### Big example
 used with node index.mjs > index.html
