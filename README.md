@@ -28,7 +28,24 @@ you need to implament not all Conventions you can also choose to go in any combi
 ```js
 import uuid from 'uuid'
 export const model = { id: `el-${uuid.v4()}`, color: 'blue'}
+export const render = function() { 
+  return `<${this.id} style="color: ${this.color}">I am ${this.color}</${this.id}>`
+}
+export const html = render.apply(model)
+```
+
+```js
+import uuid from 'uuid'
+export const model = { id: `el-${uuid.v4()}`, color: 'red'}
 export const render = ()=>`<${model.id} style="color: ${model.color}">I am ${model.color}</${model.id}>`
+export const html = render();
+```
+// Show options merge
+```js
+import uuid from 'uuid'
+export const model = { id: `el-${uuid.v4()}`, color: 'red'}
+export const render = ()=>`<${model.id} style="color: ${model.color}">I am ${model.color}</${model.id}>`
+export const html = render();
 ```
 
 Generate a index.html via ssr
