@@ -21,6 +21,9 @@ render
 // reference outer model and merge it with data to supply defaults
 ```
 
+you need to implament not all Conventions you can also choose to go in any combination we have 2 view layers the html property and render function and then 4 places to apply logic customElementDefinition and connectedCallback as also side Effects and rendered script tags.
+
+
 ## Most Basic Pattern Small Component
 ```js
 import uuid from 'uuid'
