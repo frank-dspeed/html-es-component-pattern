@@ -1,6 +1,7 @@
-# html-es-component-pattern
+# html-es-component-pattern for Browsers
 Patterns to use native ECMAScript modules for WebComponents. including SSR Support
 you should be already familar with HTML Parsing inside the browser and it's diffrent queues and eventbus systems.
+if you are searching for patterns that work with diffrent implamentations like [webview go here](#)
 
 https://dev.to/frankdspeed/the-html-component-pattern-hcp-3pkp
 
